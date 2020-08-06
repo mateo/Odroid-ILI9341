@@ -1,6 +1,45 @@
-import Image
+import board
+import digitalio
+import busio
 
-import Adafruit_ILI9341 as TFT
-import Adafruit_GPIO as GPIO
-import Adafruit_GPIO.SPI as SPI
+import adafruit_rgb_display.ili9341 as ili9341
 
+from PIL import Image, ImageDraw
+
+cs_pin = digitalio.DigitalInOut(board.CSN)
+dc_pin = digitalio.DigitalInOut(board.13)		# Check this is the right format for pins -- python\ dir(board)
+reset_pin = digitalio.DigitalInOut(board.15)	# Check this is the right format for pins -- python\ dir(board)
+
+BAUDRATE = 24000000	# Not sure about this
+
+spi = board.SPI()
+
+disp = ili9341.ILI9341(
+    spi,
+    rotation=90,	# Not sure about this
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+)
+
+if disp.rotation % 180 == 90:	# Why not
+    height = disp.width  # we swap height/width to rotate it to landscape!
+    width = disp.height
+else:
+    width = disp.width  # we swap height/width to rotate it to landscape!
+    height = disp.height
+
+image = Image.new("RGB", (width, height))
+
+draw = ImageDraw.Draw(image)
+
+# Blue Screen Test
+draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 255))
+disp.image(image)
+
+######## Things to do tomorrow ########
+# Initioalize SPI https://wiki.odroid.com/odroid-xu4/application_note/gpio/spi
+# Initialize blinka https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/initial-setup
+# Initialize ILI9341 Libraries and pip thingies https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/python-usage
+# Other SPI Display Tests
