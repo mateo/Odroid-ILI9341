@@ -7,8 +7,8 @@ import adafruit_rgb_display.ili9341 as ili9341
 from PIL import Image, ImageDraw
 
 cs_pin = digitalio.DigitalInOut(board.CSN)
-dc_pin = digitalio.DigitalInOut(board.13)		# Check this is the right format for pins -- python\ dir(board)
-reset_pin = digitalio.DigitalInOut(board.15)	# Check this is the right format for pins -- python\ dir(board)
+dc_pin = digitalio.DigitalInOut(board.D13)		# Check this is the right format for pins -- python\ dir(board)
+reset_pin = digitalio.DigitalInOut(board.D15)	# Check this is the right format for pins -- python\ dir(board)
 
 BAUDRATE = 24000000	# Not sure about this
 
@@ -40,6 +40,8 @@ disp.image(image)
 
 ######## Things to do tomorrow ########
 # Initioalize SPI https://wiki.odroid.com/odroid-xu4/application_note/gpio/spi
+# Install libgpiod without the header issue https://github.com/aquaticus/nexus433/issues/21
+#	Then https://pypi.org/project/gpiod/
 # Initialize blinka https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/initial-setup
 # Initialize ILI9341 Libraries and pip thingies https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/python-usage
 # Other SPI Display Tests
