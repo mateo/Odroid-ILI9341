@@ -6,7 +6,7 @@ import adafruit_rgb_display.ili9341 as ili9341
 
 from PIL import Image, ImageDraw
 
-cs_pin = digitalio.DigitalInOut(board.CSN)
+cs_pin = digitalio.DigitalInOut(board.SPI_CS0)
 dc_pin = digitalio.DigitalInOut(board.D13)		# Check this is the right format for pins -- python\ dir(board)
 reset_pin = digitalio.DigitalInOut(board.D15)	# Check this is the right format for pins -- python\ dir(board)
 
@@ -43,5 +43,7 @@ disp.image(image)
 # Install libgpiod without the header issue https://github.com/aquaticus/nexus433/issues/21
 #	Then https://pypi.org/project/gpiod/
 # Initialize blinka https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/initial-setup
+# 	YOU HAVE TO CHANGE THE FILE THAT THROWS AN ERROR< IT READS "Chip" should read "chip"
+#	https://github.com/adafruit/Adafruit_Blinka/blob/master/src/adafruit_blinka/microcontroller/generic_linux/libgpiod_pin.py
 # Initialize ILI9341 Libraries and pip thingies https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/python-usage
 # Other SPI Display Tests
