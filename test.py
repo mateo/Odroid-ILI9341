@@ -12,7 +12,7 @@ reset_pin = digitalio.DigitalInOut(board.D15)	# Check this is the right format f
 
 BAUDRATE = 24000000	# Not sure about this
 
-spi = board.SPI()
+spi = busio.SPI(clock=board.SCLK, MOSI=board.MOSI, MISO=board.MISO)
 
 disp = ili9341.ILI9341(
     spi,
@@ -43,7 +43,6 @@ disp.image(image)
 # Install libgpiod without the header issue https://github.com/aquaticus/nexus433/issues/21
 #	Then https://pypi.org/project/gpiod/
 # Initialize blinka https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/initial-setup
-# 	YOU HAVE TO CHANGE THE FILE THAT THROWS AN ERROR< IT READS "Chip" should read "chip"
-#	https://github.com/adafruit/Adafruit_Blinka/blob/master/src/adafruit_blinka/microcontroller/generic_linux/libgpiod_pin.py
+# 	See my issue on the blinka repo, Melissa solved the libgpiod error
 # Initialize ILI9341 Libraries and pip thingies https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/python-usage
 # Other SPI Display Tests
