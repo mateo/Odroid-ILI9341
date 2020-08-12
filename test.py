@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw
 
 cs_pin = digitalio.DigitalInOut(board.SPI_CS0)
 dc_pin = digitalio.DigitalInOut(board.D13)		# Check this is the right format for pins -- python\ dir(board)
-reset_pin = digitalio.DigitalInOut(board.D15)	# Check this is the right format for pins -- python\ dir(board)
+reset_pin = digitalio.DigitalInOut(board.D7)	# Check this is the right format for pins -- python\ dir(board)
 
 BAUDRATE = 24000000	# Not sure about this
 
