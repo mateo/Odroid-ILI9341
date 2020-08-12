@@ -6,9 +6,9 @@ import adafruit_rgb_display.ili9341 as ili9341
 
 from PIL import Image, ImageDraw
 
-cs_pin = digitalio.DigitalInOut(board.SPI_CS0)
-dc_pin = digitalio.DigitalInOut(board.D13)		# Check this is the right format for pins -- python\ dir(board)
-reset_pin = digitalio.DigitalInOut(board.D7)	# Check this is the right format for pins -- python\ dir(board)
+cs_pin = digitalio.DigitalInOut(board.D15)
+dc_pin = digitalio.DigitalInOut(board.D13)		# USES THE SHIFTER SHIELD LAYOUT
+reset_pin = digitalio.DigitalInOut(board.D7)
 
 BAUDRATE = 24000000	# Not sure about this
 
