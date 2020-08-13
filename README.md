@@ -26,20 +26,37 @@ If you are using another CircuitPython Compatible Display this test script shoul
 ## Pin Numberings
 The software pin numberings used here are defined as part of Adafruit Blinka.  The pin numberings are based on the Shifter Shield physical pinout (Pin D7 is the 7th physical pin).  The shifter shield is required to use this LCD as the SPI bus requires at minimum 3.3v logic, but if you plan to use the GPIO pins for other purposes at 1.8v, check the [schematic for the shifter shield](https://dn.odroid.com/homebackup/XU4_SHIFTER_SHIELD_REV0.1.pdf) to figure out the Adafruit pin numberings, or use this handy chart I made because I love you kind stranger
 
-| Adafruit Pin | GPIO Physical Pin | Odroid GPIO Pin | WiringPi Pin |
-|-----|----|----|----|
-| D7  | 15 | 18 | 7  |
-| D13 | 13 | 21 | 2  |
-| D15 | 17 | 22 | 3  |
-| D16 | 18 | 19 | 4  |
-| D18 | 25 | 23 | 5  |
-| D22 | 26 | 24 | 6  |
-| D26 | 24 | 25 | 11 |
-| D29 | 20 | 28 | 21 |
-| D31 | 19 | 30 | 22 |
-| D32 | 21 | 29 | 26 |
-| D33 | 22 | 31 | 23 |
-| D36 | 27 | 33 | 27 |
+ ### CON10 
+| Adafruit Pin | GPIO Physical Pin | Odroid GPIO Pin | WiringPi Pin | Name |
+|-----|----|-----|----|------------|
+| D3  | 16 | 209 | 8  | I2C_1.SDA  |
+| D5  | 14 | 210 | 9  | I2C_1.SCL  |
+| D7  | 15 | 18  | 7  |            |
+| D8  | 8  | 172 | 15 | UART0.TXD  |
+| D10 | 6  | 171 | 16 | UART0.RXD  |
+| D11 | 5  | 174 | 0  | UART0.RTSN |
+| D12 | 4  | 173 | 1  | UART0.CTSN |
+| D13 | 13 | 21  | 2  |            |
+| D15 | 17 | 22  | 3  |            |
+| D16 | 18 | 19  | 4  |            |
+| D18 | 25 | 23  | 5  |            |
+| D19 | 7  | 192 | 12 | SPI_1.MOSI |
+| D21 | 9  | 191 | 13 | SPI_1.MISO |
+| D22 | 26 | 24  | 6  |            |
+| D23 | 10 | 189 | 14 | SPI_1.CLK  |
+| D24 | 11 | 190 | 10 | SPI_1.CSN  |
+| D26 | 24 | 25  | 11 |            |
+| D29 | 20 | 28  | 21 |            |
+| D31 | 19 | 30  | 22 |            |
+| D32 | 21 | 29  | 26 |            |
+| D33 | 22 | 31  | 23 |            |
+| D36 | 27 | 33  | 27 |            |
+
+ ### CON11 
+| Adafruit Pin | GPIO Physical Pin | Odroid GPIO Pin | WiringPi Pin | Name |
+|-----|---|-----|----|-----------|
+| D27 | 4 | 187 | 30 | I2C_5.SDA |
+| D28 | 6 | 188 | 31 | I2C_5.SCL |
 
 ## Final Notes
 I do not maintain any of the libraries involved in these scripts nor do I even know that much about them, any questions regarding them should be directed to the creators, however if this script fails to run do let me know, I can try my best to troubleshoot.  If you wish to use this with the same display, or another CircuitPython supported display, check out [this guide](https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/python-usage) from Adafruit but skip any steps regarding dependencies
