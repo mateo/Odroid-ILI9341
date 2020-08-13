@@ -21,7 +21,7 @@ The output should be an oject containing a list of Adafruit named pinouts, most 
 Then run the test script
 `sudo python3 test.py`
 
-If you are using another CircuitPython Display this test script should work, just comment out the respective display settings
+If you are using another CircuitPython Compatible Display this test script should work, just adapt it through the guide linked below
 
 ## Pin Numberings
 The software pin numberings used here are defined as part of Adafruit Blinka.  The pin numberings are based on the Shifter Shield physical pinout (Pin D7 is the 7th physical pin).  The shifter shield is required to use this LCD as the SPI bus requires at minimum 3.3v logic, but if you plan to use the GPIO pins for other purposes at 1.8v, check the [schematic for the shifter shield](https://dn.odroid.com/homebackup/XU4_SHIFTER_SHIELD_REV0.1.pdf) to figure out the Adafruit pin numberings, or use this handy chart I made because I love you kind stranger
