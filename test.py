@@ -1,3 +1,6 @@
+# This script tests the fully wired up LCD using SPI
+# Must be run as sudo
+
 import board
 import digitalio
 import busio
@@ -6,8 +9,8 @@ import adafruit_rgb_display.ili9341 as ili9341
 
 from PIL import Image, ImageDraw
 
-cs_pin = digitalio.DigitalInOut(board.D15)
-dc_pin = digitalio.DigitalInOut(board.D13)		# USES THE SHIFTER SHIELD LAYOUT
+cs_pin = digitalio.DigitalInOut(board.D15)		# USES THE SHIFTER SHIELD LAYOUT
+dc_pin = digitalio.DigitalInOut(board.D13)
 reset_pin = digitalio.DigitalInOut(board.D7)
 
 BAUDRATE = 24000000	# Not sure about this
@@ -23,11 +26,11 @@ disp = ili9341.ILI9341(
     baudrate=BAUDRATE,
 )
 
-if disp.rotation % 180 == 90:	# Why not
-    height = disp.width  # we swap height/width to rotate it to landscape!
+if disp.rotation % 180 == 90:
+    height = disp.width
     width = disp.height
 else:
-    width = disp.width  # we swap height/width to rotate it to landscape!
+    width = disp.width
     height = disp.height
 
 image = Image.new("RGB", (width, height))
@@ -41,7 +44,6 @@ disp.image(image)
 ######## Things to do tomorrow ########
 # Initioalize SPI https://wiki.odroid.com/odroid-xu4/application_note/gpio/spi
 # Install libgpiod without the header issue https://github.com/aquaticus/nexus433/issues/21
-#	Then https://pypi.org/project/gpiod/
 # Initialize blinka https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/initial-setup
 # 	See my issue on the blinka repo, Melissa solved the libgpiod error
 # Initialize ILI9341 Libraries and pip thingies https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/python-usage
