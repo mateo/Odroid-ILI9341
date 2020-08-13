@@ -40,11 +40,3 @@ draw = ImageDraw.Draw(image)
 # Blue Screen Test
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 255))
 disp.image(image)
-
-######## Things to do tomorrow ########
-# Initioalize SPI https://wiki.odroid.com/odroid-xu4/application_note/gpio/spi
-# Install libgpiod without the header issue https://github.com/aquaticus/nexus433/issues/21
-# Initialize blinka https://learn.adafruit.com/circuitpython-libaries-linux-odroid-c2/initial-setup
-# 	See my issue on the blinka repo, Melissa solved the libgpiod error
-# Initialize ILI9341 Libraries and pip thingies https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/python-usage
-# Other SPI Display Tests
