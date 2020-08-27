@@ -2,7 +2,7 @@
 # Must be run as sudo
 
 import time
-import random
+from random import randint
 
 import board
 import digitalio
