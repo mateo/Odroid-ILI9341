@@ -71,7 +71,7 @@ sudo cp bindings/python/.libs/gpiod.a /usr/local/lib/python3.?/dist-packages/
 
 echo "Installing Adafruit Blinka..."
 echo
-sudo pip3 install adafruit-blinka
+sudo pip3 install Adafruit-Blinka
 
 echo "Installing Adafruit Circuitpython..."
 echo
