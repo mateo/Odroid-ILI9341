@@ -63,12 +63,12 @@ disp.fill(0)
 
 # Look At All Those Chickens!!
 draw.rectangle((0, 0, width, height), outline=0, fill=(200, 200, 255))
-draw.rectangle((0, 0, width, height/2), outline=0, fill=(0, 200, 0))
-draw.rectangle((width/4, height/2, 3*width/4, height/2), outline=0, fill=(255, 175, 75))
-for i in range(0,20):
-	x = randint(0,width)
-	y = randint(0,height/2)
+draw.rectangle((0, height/2, width, height/2), outline=0, fill=(0, 200, 0))
+draw.rectangle((width/4, 0, 3*width/4, height/2), outline=0, fill=(255, 175, 75))
+for i in range(0, 20):
+	x = randint(0, width)
+	y = randint(height/2, height)
 	draw.rectangle((x, y, x+15, y+10), outline=0, fill=(255, 255, 255))
-draw.ellipse((-width/3, 0, width/3, height), outline=0, fill=(175, 175, 100))
+draw.ellipse((-width/3, 0, width/3, height), fill=(175, 175, 100))
 disp.image(image)
 time.sleep(2)
