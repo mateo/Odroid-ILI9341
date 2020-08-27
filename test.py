@@ -7,7 +7,7 @@ import busio
 
 import adafruit_rgb_display.ili9341 as ili9341
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 cs_pin = digitalio.DigitalInOut(board.D15)		# USES THE SHIFTER SHIELD LAYOUT
 dc_pin = digitalio.DigitalInOut(board.D13)
