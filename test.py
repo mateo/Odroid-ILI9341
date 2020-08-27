@@ -2,6 +2,7 @@
 # Must be run as sudo
 
 import time
+import random
 
 import board
 import digitalio
@@ -56,6 +57,7 @@ disp.fill(0)
 # Hello World Test
 draw.rectangle((0, 0, width, height), outline=0, fill=(150, 150, 150))
 draw.text((100,100), "Hello World!", font=font, fill=(255,255,255))
+disp.image(image)
 time.sleep(2)
 disp.fill(0)
 
@@ -68,4 +70,5 @@ for i in range(0,20):
 	y = randint(0,height/2)
 	draw.rectangle((x, y, x+15, y+10), outline=0, fill=(255, 255, 255))
 draw.ellipse((-width/3, 0, width/3, height), outline=0, fill=(175, 175, 100))
+disp.image(image)
 time.sleep(2)
