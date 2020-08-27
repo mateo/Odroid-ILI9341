@@ -55,7 +55,7 @@ disp.fill(0)
 
 # Hello World Test
 draw.rectangle((0, 0, width, height), outline=0, fill=(150, 150, 150))
-textdraw.text((100,100), "Hello World!", font=font, fill=(255,255,255))
+draw.text((100,100), "Hello World!", font=font, fill=(255,255,255))
 time.sleep(2)
 disp.fill(0)
 
