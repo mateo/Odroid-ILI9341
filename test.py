@@ -1,6 +1,8 @@
 # This script tests the fully wired up LCD using SPI
 # Must be run as sudo
 
+import time
+
 import board
 import digitalio
 import busio
