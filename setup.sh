@@ -5,7 +5,7 @@
 # chmod a+x setup.sh
 # ./setup.sh
 
-# A significant amount of this script installs libgpiod, based on the legacy version of the script found here:
+# A significant amount of this script installs libgpiod, based on the legacy version of the script found here, and written by @makermelissa
 # https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/libgpiod.sh
 
 
